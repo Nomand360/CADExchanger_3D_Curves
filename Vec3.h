@@ -1,5 +1,6 @@
 #ifndef VEC3_H
 #define VEC3_H
+#include <ostream>
 
 template <typename T>
 class Vec3
@@ -14,6 +15,11 @@ public:
         x(static_cast<T>(vector.x)),
         y(static_cast<T>(vector.y)),
         z(static_cast<T>(vector.z)){}
+
+    friend std::ostream &operator<<(std::ostream &os, const Vec3 &vec) {
+        os << " x: " << vec.x << " y: " << vec.y << " z: " << vec.z;
+        return os;
+    }
 
     T x;
     T y;
