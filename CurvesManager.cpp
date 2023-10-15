@@ -11,9 +11,9 @@ void CurvesManager::createCurvesContainer(std::vector<std::shared_ptr<Curve> > &
     factory.emplace_back(circ);
     factory.emplace_back(eclip);
     factory.emplace_back(helix);
-    int size = curve_size(gen_);
+    int size = curve_size(gen);
     for(int i = 0; i < size; i++){
-        curves.emplace_back(factory.at(curve_types(gen_))->CreateCurve());
+        curves.emplace_back(factory.at(curve_types(gen))->CreateCurve());
     }
 }
 
@@ -27,24 +27,24 @@ void CurvesManager::createCirclesContainer(std::vector<std::shared_ptr<Curve> > 
     }
 }
 
-void CurvesManager::showCurvesContainerWithParam(std::vector<std::shared_ptr<Curve> > &curves, float param)
+void CurvesManager::showCurvesContainerWithParam(const std::vector<std::shared_ptr<Curve> > &curves, float param)
 {
     for(const auto &curve : curves){
         std::cout << curve->getName() << ": " << " point: " << curve->getPoint(param) << " derivative: " << curve->getDerivative(param) << std::endl;
     }
 }
 
-void CurvesManager::showCurvesContainer(std::vector<std::shared_ptr<Curve> > &curves)
+void CurvesManager::showCurvesContainer(const std::vector<std::shared_ptr<Curve> > &curves)
 {
     for(const auto &curve : curves){
         std::cout << curve->getName() << ": " << curve->getPosition() << std::endl;
     }
 }
 
-void CurvesManager::showCircleContainer(std::vector<std::shared_ptr<Circle> > &circles)
+void CurvesManager::showCircleContainer(const std::vector<std::shared_ptr<Circle> > &circles)
 {
     for(const auto &circle : circles){
-        std::cout << circle->getName() << ": " << circle->getPosition() << std::endl;
+        std::cout << circle->getName() << ": " << circle->getPosition() << " radius: " << circle->getRadius() << std::endl;
     }
 }
 
@@ -53,7 +53,7 @@ void CurvesManager::sortCircleContainer(std::vector<std::shared_ptr<Circle> > &c
     std::sort(circles.begin(), circles.end(), [](std::shared_ptr<Circle> &l, std::shared_ptr<Circle> &r){ return l->getRadius() < r->getRadius();});
 }
 
-float CurvesManager::getTotalSumOfRadii(std::vector<std::shared_ptr<Circle> > &circles)
+float CurvesManager::getTotalSumOfRadii(const std::vector<std::shared_ptr<Circle> > &circles)
 {
     float sum = 0.f;
     for(const auto &circle : circles){

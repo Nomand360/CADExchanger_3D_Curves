@@ -10,7 +10,8 @@ add_executable(3DGeometryCurves main.cpp
     Curves_3D.h
     Curves_3D.cpp
     CurvesFactory.h
-    CurvesManager.h CurvesManager.cpp)
+    CurvesManager.h CurvesManager.cpp
+    Menu.h Menu.cpp)
 
 install(TARGETS 3DGeometryCurves
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

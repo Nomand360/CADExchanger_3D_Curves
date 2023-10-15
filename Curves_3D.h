@@ -38,7 +38,7 @@ private:
 class Elipse : public Curve
 {
 public:
-    explicit Elipse(float xRad, float yRad) : xRadius(xRad), yRadius(yRad){
+    Elipse(float xRad, float yRad) : xRadius(xRad), yRadius(yRad){
         name = "Elipse";
     }
     Elipse(float xPos, float yPos, float xRad, float yRad) : Curve(xPos, yPos, 0.f), xRadius(xRad), yRadius(yRad){
