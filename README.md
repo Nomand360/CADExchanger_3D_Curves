@@ -19,10 +19,16 @@ Launch the program and select an item from the proposed menu.
 Containers are initialized in advance.
 
 ==========Main Menu==========
+
 1 - Show curves container.
+
 2 - Show circles container(contain circles from first curves container)
+
 3 - Print coordinates of points and derivatives of all curves in the container at t=PI/4
+
 4 - Sort container of circles
+
 5 - Compute the total sum of radii of circles
+
 6 - Exit
 
